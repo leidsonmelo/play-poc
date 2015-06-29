@@ -1,0 +1,27 @@
+@(title: String)(bootstrap: Html)(dadosEspecificos: Html)
+
+<html lang="pt-BR">
+    <head>
+        <title>@title</title>
+        @bootstrap
+    </head>
+    <body>
+    	<div class="container">
+            @helper.form(action=routes.Pessoa.gravar()) {
+    	    	<form>
+    	    		<div class="form-group">
+                        @helper.inputText(pessoaForm("nome"))
+                        <p class="help-block">informe o nome do diretor</p>
+    	    		</div>
+    	    		@dadosEspecificos
+                    <div class="control-group">
+                        <label class="control-label" for="singlebutton"></label>
+                        <div class="controls">
+                            <button name="singlebutton" class="btn btn-primary">Gravar</button>
+                        </div>
+                    </div>
+                </form>
+            }
+    	</div>
+    </body>
+</html>
